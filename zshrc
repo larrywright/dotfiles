@@ -27,5 +27,6 @@ alias gc=git clone
 alias gs=git status
 
 alias e="emacs"
-alias dev=mosh larrywright@dev.argonautlabs.com
+alias dev="mosh larrywright@dev.argonautlabs.com"
 alias code=cd ~/code
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
