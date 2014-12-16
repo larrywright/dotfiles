@@ -1,9 +1,9 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="minimal"
 DISABLE_AUTO_UPDATE="true"
-DISABLE_LS_COLORS="true"
+#DISABLE_LS_COLORS="true"
 
-plugins=(git bundler brew gem docker git-flow jruby rbenv knife_ssh osx rake rails4 ruby tmux vagrant brew knife lein)
+plugins=(git bundler brew gem docker git-flow jruby rbenv knife_ssh osx rake rails4 ruby tmux vagrant brew knife lein docker)
 
 export PATH="/usr/local/bin:$PATH"
 export EDITOR='emacs'
