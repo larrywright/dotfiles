@@ -1,0 +1,16 @@
+#!/bin/bash
+
+alias gc="git clone"
+alias gs="git status"
+
+alias e="emacs"
+
+alias od="cd ~/Documents/OneDrive"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec ${SHELL} -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
