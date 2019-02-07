@@ -62,3 +62,13 @@ python3(){
 		-v "$PWD":/usr/src/myapp -w /usr/src/myapp \
 		python:3 python "$@"
 }
+
+hugo(){
+	docker run -it --rm --name hugo --net host \
+		-v "$PWD":/blog larrywright/hugo "$@"
+}
+
+hugos(){
+	docker run -it --rm --name hugo --net host \
+		-v "$PWD":/blog larrywright/hugo server -w
+}
