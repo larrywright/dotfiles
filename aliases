@@ -2,6 +2,7 @@
 
 alias gc="git clone"
 alias gs="git status"
+alias ls="ls -alGh"
 
 alias e="emacs"
 
@@ -14,3 +15,50 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+alias templates='code ~/Documents/OneDrive/Reference/Project\ Templates/'
+
+alias dotfiles='code ~/code/dotfiles'
+
+export DOCKER_REPO_PREFIX=jess
+
+ectags() {
+	docker run --rm -it -v $(pwd):/root/ctags-workspace --name ctags larrywright/ctags
+}
+aws(){
+	docker run -it --rm \
+		-v "${HOME}/.aws:/root/.aws" \
+		--log-driver none \
+		--name aws \
+		${DOCKER_REPO_PREFIX}/awscli "$@"
+}
+
+http(){
+	docker run -it --rm \
+    --net host \
+    -v "$PWD":/downloads \
+    -w /downloads  \
+    larrywright/httpie "$@"
+}
+
+wget(){
+	http --download "$@"
+}
+
+hostess(){
+  sudo docker run -it --rm \
+    -v /etc/hosts:/etc/hosts \
+    larrywright/hostess "$@"
+}
+
+python(){
+	docker run -it --rm --name python-script \
+		-v "$PWD":/usr/src/myapp -w /usr/src/myapp \
+		python:2 python "$@"
+}
+
+python3(){
+	docker run -it --rm --name python-script \
+		-v "$PWD":/usr/src/myapp -w /usr/src/myapp \
+		python:3 python "$@"
+}
