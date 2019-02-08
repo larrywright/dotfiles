@@ -1,8 +1,6 @@
 #!/bin/bash
 
-export PATH=/usr/bin:/usr/sbin:/bin:/sbin
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$PATH:/usr/local/opt/python@2/libexec/bin
+export PATH="/usr/local/bin:$PATH"
 export EDITOR='code'
 
 export PATH=${PATH}:/usr/local/bin
