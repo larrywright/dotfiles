@@ -51,18 +51,6 @@ hostess(){
     larrywright/hostess "$@"
 }
 
-python(){
-	docker run -it --rm --name python-script \
-		-v "$PWD":/usr/src/myapp -w /usr/src/myapp \
-		python:2 python "$@"
-}
-
-python3(){
-	docker run -it --rm --name python-script \
-		-v "$PWD":/usr/src/myapp -w /usr/src/myapp \
-		python:3 python "$@"
-}
-
 hugo(){
 	docker run -it --rm --name hugo --net host \
 		-v "$PWD":/blog larrywright/hugo "$@"
