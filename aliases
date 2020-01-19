@@ -20,6 +20,8 @@ alias templates='code ~/Documents/OneDrive/Reference/Project\ Templates/'
 
 alias dotfiles='code ~/code/dotfiles'
 
+alias plan='cat ~/.plan'
+
 export DOCKER_REPO_PREFIX=jess
 
 ectags() {
@@ -51,7 +53,7 @@ hostess(){
     larrywright/hostess "$@"
 }
 
-hugo(){
+hugod(){
 	docker run -it --rm --name hugo --net host \
 		-v "$PWD":/blog larrywright/hugo "$@"
 }
